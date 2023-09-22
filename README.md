@@ -1,16 +1,6 @@
-# oneday
+# One Day Project - 230922
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- service
+- 가. 손님이 앉아있는(이미 식사 중) 테이블과 비어있는 테이블을 구분하여 표시한다.
+- 나. 손님이 앉아있는 테이블을 클릭하면 식사(주문) 중인 상품 리스트가 표시되어야 한다.
+- 다. 주문 리스트가 있는 경우, 상품 주문 항목을 추가, 수정, 삭제 할 수 있다.
