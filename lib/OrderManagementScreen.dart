@@ -6,7 +6,8 @@ import 'package:oneday/main.dart';
 class OrderManagementScreen extends StatefulWidget {
   final OrderTable table;
 
-  const OrderManagementScreen({super.key, required this.table});
+  const OrderManagementScreen(
+      {super.key, required this.table, required List orderList});
 
   @override
   State<OrderManagementScreen> createState() => _OrderManagementScreenState();

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oneday/OrderManagementScreen.dart';
+import 'package:oneday/provider/order_list_provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const App());
@@ -10,12 +12,20 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('김밥 테이블 POS'),
+    return MultiProvider(
+      // 여기서 MultiProvider를 사용하여 Provider를 설정합니다.
+      providers: [
+        ChangeNotifierProvider(
+            create: (context) =>
+                OrderListProvider()), // OrderListProvider를 제공합니다.
+      ],
+      child: MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('김밥 테이블 POS'),
+          ),
+          body: const TableManagement(),
         ),
-        body: const TableManagement(),
       ),
     );
   }
@@ -45,7 +55,10 @@ class _TableManagementState extends State<TableManagement> {
   void _openOrderManagementScreen(OrderTable table) {
     Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => OrderManagementScreen(table: table),
+        builder: (context) => OrderManagementScreen(
+          table: table,
+          orderList: const [],
+        ),
       ),
     );
   }
